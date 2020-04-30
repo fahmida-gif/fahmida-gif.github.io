@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			//calling a variable
+			var x= 0;
+			var h = 70;
+			var w = 20; 
+			
+			//create js with syntax:
+			  //own function
+
+			  //to test and debug
+			function testFunction(){
+			 	console. log("test");
+			 }
+
+			 // now we are calling the function 
+			testFunction();
+
+			function createRect() {
+				//print("my Rectangle"); (this was used to test my code)
+				stroke("#FEEBD9");
+				rect(mouseX,mouseY,h,w);
+			
+
+			}
+
+			
+			//function to set canvas and give background color
+			function setup() {
+				createCanvas(windowWidth,windowHeight);
+				background("#4062EB");
+			}
+
+			//calling a function, fill it in with a color as well as its border. assigning h and w to work with the variables and putting numbers to show its location.
+			function draw(){
+				createRect();
+				noStroke();
+				fill(255,0,0);
+				textSize(60);
+				text("hello, this is my first p5",255,200);
+
+			// a logic statement to show different color when mouse is pressed.	
+				if (mouseButton) {
+					fill("#CFEB81");
+					createRect();
+
+				}
+				else {
+					fill("#FF4820");
+					createRect();
+				}
+				
+				//using a loop here
+				while (x < windowHeight) {
+					fill("#FFFDCC");
+					triangle(random(windowWidth),random(windowHeight),h,w)
+					console. log(x);
+
+					// using X++ we are stopping a shape to occur infinite times.
+					x++;
+				}
+			}
+		</script>
+	</body>
+</html>
